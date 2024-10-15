@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <title>My Website Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS wechseln</title>
+    <!-- Standard CSS Datei -->
+    <link id="theme-link" rel="stylesheet" href="style1.css">
 </head>
 <body>
+    <h1>Willkommen</h1>
+    <p>Dies ist ein Beispieltext.</p>
 
+    <!-- Buttons für jeden Stil -->
+    <button onclick="changeCSS('style1.css')">Stil 1</button>
+    <button onclick="changeCSS('style2.css')">Stil 2</button>
+    <button onclick="changeCSS('style3.css')">Stil 3</button>
+    <button onclick="changeCSS('style4.css')">Stil 4</button>
+
+    <script>
+        function changeCSS(stylesheet) {
+            var themeLink = document.getElementById('theme-link');
+            // Setzt die CSS-Datei auf die ausgewählte
+            themeLink.setAttribute('href', stylesheet);
+        }
+    </script>
 </body>
 </html>
