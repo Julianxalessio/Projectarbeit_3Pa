@@ -1,0 +1,10 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: background-image 0.5s;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+  }

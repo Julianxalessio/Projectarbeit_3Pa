@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS wechseln</title>
     <!-- Standard CSS Datei -->
-    <link id="theme-link" rel="stylesheet" href="style1.css">
+    <link id="theme-link" rel="stylesheet" href="CSS_Stlyesheets/Middle Screen.css">
 </head>
 <body>
     <h1>Willkommen</h1>
@@ -16,13 +16,24 @@
     <button onclick="changeCSS('style2.css')">Stil 2</button>
     <button onclick="changeCSS('style3.css')">Stil 3</button>
     <button onclick="changeCSS('style4.css')">Stil 4</button>
+    
+
+    <!--I-Pad = 810 x 1080 / 1024 x 1366-->
+    <!--Phoen Screen = 360 x 800 / 390 x 844 -->
+    <!--Middle Screen = 1920 x 1080-->
+    <!--Pc Monitor = 3840 x 2160-->
 
     <script>
-        function changeCSS(stylesheet) {
+       let ScreenWidth = window.innerWidth;
+    let ScreenHeight = window.innerHeight;
+
+        console.log (ScreenHeight,ScreenWidth);
+
+        /*function changeCSS(stylesheet) {
             var themeLink = document.getElementById('theme-link');
             // Setzt die CSS-Datei auf die ausgewählte
             themeLink.setAttribute('href', stylesheet);
-        }
+        }*/
     </script>
 </body>
 </html>
