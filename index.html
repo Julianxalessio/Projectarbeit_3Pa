@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <script type="text/javascript" src="Password/module1.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #PasswortInput{
+            position: absolute;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <title>Test</title>
+    <h1>Password</h1>
+    <input type="password" id="PasswordInput" placeholder="Enter Password">  
+    <button id="SubmitPassword" onclick="SubmitPassword()">Ok</button>
+
+    <script type="text/javascript">
+        let Password =  PasswordTitle.password;
+        console.log(Password);
+
+       function SubmitPassword(){
+        let PasswordInputed = PasswordInput.value;
+        if (Password==PasswordInputed){
+            window.location.replace("HomePage.html")
+            localStorage.setItem('Login', JSON.stringify("true"));
+        }
+       }
+
+    </script>
+    
+</body>
+
+</html>
