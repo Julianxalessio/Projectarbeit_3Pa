@@ -8,23 +8,61 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(197, 197, 197);
         }
-        #PasswortInput{
+        #ContainerLogin{
+            background-color: white;
+            width: 500px;
+            height: 300px;
             position: absolute;
+            top: 25%;
+            left:35%;
+            align-items: center;
+            justify-items: center;
         }
-        
+        #PasswordInput{
+            position: absolute;
+            height: 40px;
+            width: 250px;
+            font-size: 15px;
+            left: 20px;
+            top: 45%;
+            border-color: black;
+            border-radius: 8px;
+        }
+        #SubmitPassword{
+            position: absolute;
+            top: 75%;
+            left: 20px;
+            height: 40px;
+            width: 70px;
+            font-size: 15px;
+            background-color: white;
+            border-color: black;
+            border-radius: 8px;
+        }
+        #StartText{
+            position: absolute;
+            left: 20px;
+            font-size: 32px;
+        }
     </style>
 </head>
 
 <body>
     <title>Test</title>
-    <h1>Password</h1>
-    <input type="password" id="PasswordInput" placeholder="Enter Password">  
-    <button id="SubmitPassword" onclick="SubmitPassword()">Ok</button>
+    <div id="ContainerLogin">
+        <h1 id="StartText">Herzlich Willkomen zum Klassenbuch der 3Pa</h1>
+        <input type="password" id="PasswordInput" placeholder="Enter Password">  
+        <button id="SubmitPassword" onclick="SubmitPassword()">Login</button>
+    </div>
+
+
 
     <script type="text/javascript">
         let Password =  PasswordTitle.password;
         console.log(Password);
+        
 
        function SubmitPassword(){
         let PasswordInputed = PasswordInput.value;
@@ -33,6 +71,18 @@
             localStorage.setItem('Login', JSON.stringify("true"));
         }
        }
+
+       addEventListener('keypress', function (event) {
+        if (event.key === 'Enter'){
+            SubmitPassword();
+        }
+       });
+
+
+
+
+
+
 
     </script>
     
