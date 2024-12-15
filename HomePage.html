@@ -33,6 +33,10 @@
             background-color: #04AA6D;
             color: white;
         }
+        #Countdown{
+            position: absolute;
+            top: 500px;
+        }
     </style>
 </head>
 
@@ -52,8 +56,43 @@
         <p>Some content..</p>
     </div>
 
-    <script>
+    <p id="Countdown">hi</p>
 
+    <script>
+        var Minutes = 14;
+        let Seconds = 10;
+
+        function StartCountdown(){
+            let Minutes = 14;
+            let Seconds = 59;
+            countdown();
+        }
+
+        
+        function countdown() {
+            if (Seconds === 0 ) {
+                Minutes--;
+                Seconds = 59;
+
+            }
+            
+            setTimeout(function () {
+                setTimeout(function () {
+                    Countdown.textContent = Minutes + ":" + Seconds;
+                    Seconds--;
+                    Seconds = fuehrendeNull(Seconds)
+                    
+                    console.log(Seconds)
+                    countdown();
+                }, 1000);
+            });
+            console.log ("Start Countdown")
+        }
+        StartCountdown();
+
+        function fuehrendeNull(zahl) {
+            return (zahl < 10 ? '0' : '') + zahl;
+        }
     </script>
 </body>
 
