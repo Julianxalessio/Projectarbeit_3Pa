@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS Code/Timer.css">
+    <link rel="stylesheet" href="../CSS Code/Navbar.css">
+    <style>
+        body {
+            background-color: rgb(199, 199, 199);
+        }
+
+        #SchülerContainer {
+            background-color: white;
+            width: 80%;
+            height: 1000px;
+            position: absolute;
+            top: 50px;
+            left: 10%;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 gleich große Spalten */
+            gap: 20px;
+
+        }
+
+        .Schüler {
+            display: flex;
+            flex-direction: column;
+            /* Bild und Text untereinander */
+            /* Zentriere horizontal */
+            /* Alles am oberen Rand ausrichten */
+            height: 150px;
+            /* Gleiche Höhe für alle Elemente */
+        }
+
+        .Schüler img {
+            height: 250px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 2px;
+        }
+
+        .Schüler h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <title>Test Nav</title>
+
+    <div class="topnav">
+        <a href="../HomePage/HomePage.html">Home</a>
+        <a class="active" href="SchülerPage.html">Schüler</a>
+        <a href="../Lehrer/LehrerPage.html">Lehrer</a>
+    </div>
+
+    <div id="SchülerContainer">
+        <div class="Schüler" id="Julian Lombardo" onclick="OpenJulianLombardo()">
+            <img src="Fotos Schüler/Passfoto_Julian Lombardo.jpg">
+            <h3>Julian <br> Lombardo</h3>
+        </div>
+        <div class="Schüler" id="Julian Lombardo" onclick="OpenJulianLombardo()">
+            <h3>Julian Lombardo</h3>
+        </div>
+    </div>
+
+    <p id="Countdown">hi</p>
+    <script src="../JS Code/Timer.js"></script>
+    <script>
+        function OpenJulianLombardo() {
+            window.location.replace("Schüler HTML/JulianLombardo.html")
+        }
+    </script>
+</body>
+
+</html>
