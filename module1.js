@@ -1,5 +1,5 @@
-//module1.js 
-let PasswordTitle =
+
+let OnknownThingTitle =
 {
-    password: 123
+    OnknownThing: 123
 };
