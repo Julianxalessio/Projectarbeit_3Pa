@@ -70,9 +70,9 @@
        function SubmitPassword(){
         let PasswordInputed = PasswordInput.value;
         if (Password==PasswordInputed){
-            window.location.replace("HomePage/HomePage.html")
-            localStorage.setItem('Login', JSON.stringify("true"));
-        }
+            localStorage.setItem('Login', "true");
+            window.location.replace("HomePage/HomePage.html");
+       }
        }
 
        addEventListener('keypress', function (event) {

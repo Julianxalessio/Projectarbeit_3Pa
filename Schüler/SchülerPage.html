@@ -8,40 +8,47 @@
     <link rel="stylesheet" href="../CSS Code/Navbar.css">
     <style>
         body {
-            background-color: rgb(199, 199, 199);
-        }
+    background-color: rgb(199, 199, 199);
+    margin: 0;
+    padding: 0;
+}
 
-        #SchülerContainer {
-            background-color: white;
-            width: 80%;
-            height: 200%;
-            position: absolute;
-            top: 50px;
-            left: 10%;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+#SchülerContainer {
+    background-color: white;
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-        }
+.Schüler {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
 
-        .Schüler {
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            height: 150px;
-        }
+.Schüler img {
+    max-height: 150px;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
 
-        .Schüler img {
-            height: 250px;
-            width: auto;
-            object-fit: contain;
-            margin-bottom: 2px;
-        }
+.Schüler h3 {
+    font-size: 1rem;
+    word-wrap: break-word;
+    margin: 0;
+}
 
-        .Schüler h3 {
-            text-align: center;
-            font-weight: normal;
-        }
     </style>
 </head>
 
@@ -159,6 +166,7 @@
     <script>
         function OpenJulianLombardo() {
             window.location.replace("Schüler HTML/JulianLombardo.html")
+            localStorage.setItem('Login', "true");
         }
     </script>
 </body>

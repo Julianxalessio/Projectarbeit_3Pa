@@ -14,9 +14,9 @@
     <title>Test Nav</title>
 
     <div class="topnav">
-        <a class="active" href="HomePage.html">Home</a>
-        <a href="../Schüler/SchülerPage.html">Schüler</a>
-        <a href="../Lehrer/LehrerPage.html">Lehrer</a>
+        <a class="active" href="HomePage.html" onclick="WebsiteChange()">Home</a>
+        <a href="../Schüler/SchülerPage.html" onclick="WebsiteChange()">Schüler</a>
+        <a href="../Lehrer/LehrerPage.html" onclick="WebsiteChange()">Lehrer</a>
     </div>
 
     <div style="padding-left:16px">
@@ -27,6 +27,9 @@
     <p id="Countdown">hi</p>
     <script src="../JS Code/Timer.js"></script>
     <script>
+        function WebsiteChange(){
+            localStorage.setItem('Login', "true");
+        }
     </script>
 </body>
 
