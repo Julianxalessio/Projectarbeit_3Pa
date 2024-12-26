@@ -2,7 +2,7 @@ let Minutes = 14;
 let Seconds = 10;
 let login = localStorage.getItem('Login');
 if (login === "false"){
-    window.location.replace("https://www.google.com/");
+    window.location.replace("../index.html");
 }
 function startCountdown() {
     function countdown() {
