@@ -1,9 +1,10 @@
 let Minutes = 14;
 let Seconds = 10;
 let login = localStorage.getItem('Login');
-if (login === "false"){
-    window.location.replace("../index.html");
+if (login === "false") {
+    window.location.replace(LocationReplacer);
 }
+
 function startCountdown() {
     function countdown() {
         if (Seconds === 0 && Minutes === 0) {
@@ -17,9 +18,9 @@ function startCountdown() {
         } else {
             Seconds--;
         }
-        if(Minutes === 0 & Seconds === 0){
+        if (Minutes === 0 & Seconds === 0) {
             localStorage.setItem('Login', "false");
-            window.location.replace("https://www.google.com/");
+            window.location.replace(LocationReplacer);
         }
 
         Countdown.textContent = `${fuehrendeNull(Minutes)}:${fuehrendeNull(Seconds)}`;
@@ -44,7 +45,7 @@ function markInternalNavigation() {
 document.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function (e) {
         if (link.hostname === window.location.hostname) {
-            markInternalNavigation(); 
+            markInternalNavigation();
         }
     });
 });
@@ -61,7 +62,6 @@ sessionStorage.setItem('isInternalNavigation', "false");
 function refreshTimer() {
     Minutes = 15;
     Seconds = 0;
-    console.log('Timer zurückgesetzt!');
 }
 
 document.addEventListener('mousemove', refreshTimer);
