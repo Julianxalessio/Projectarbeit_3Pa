@@ -38,10 +38,12 @@ function fuehrendeNull(zahl) {
 
 startCountdown();
 
+// Funktion zum Markieren interner Navigation
 function markInternalNavigation() {
     sessionStorage.setItem('isInternalNavigation', "true");
 }
 
+// Event-Listener für alle Links auf der Seite
 document.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function (e) {
         if (link.hostname === window.location.hostname) {
@@ -50,24 +52,32 @@ document.querySelectorAll('a').forEach(function (link) {
     });
 });
 
+// Event-Listener für das `beforeunload`-Event
 window.addEventListener('beforeunload', function () {
+    // Überprüfen, ob Navigation nicht intern ist
     if (sessionStorage.getItem('isInternalNavigation') === "false") {
-        localStorage.setItem('Login', "false");
+        try {
+            localStorage.setItem('Login', "false");
+        } catch (e) {
+            console.warn("localStorage ist nicht verfügbar:", e);
+        }
     }
 });
 
-sessionStorage.setItem('isInternalNavigation', "false");
+// Initiale Einstellung für interne Navigation
+try {
+    sessionStorage.setItem('isInternalNavigation', "false");
+} catch (e) {
+    console.warn("sessionStorage ist nicht verfügbar:", e);
+}
 
-
+// Funktion zum Zurücksetzen des Timers
 function refreshTimer() {
     Minutes = 15;
     Seconds = 0;
 }
 
-document.addEventListener('mousemove', refreshTimer);
-document.addEventListener('keydown', refreshTimer);
-document.addEventListener('click', refreshTimer);
-
-document.addEventListener('touchstart', refreshTimer);
-document.addEventListener('touchmove', refreshTimer);
-document.addEventListener('touchend', refreshTimer);
+// Event-Listener für Benutzeraktivität
+['mousemove', 'keydown', 'click', 'touchstart', 'touchmove', 'touchend'].forEach(function (event) {
+    document.addEventListener(event, refreshTimer);
+});
