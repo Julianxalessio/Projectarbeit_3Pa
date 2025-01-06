@@ -53,13 +53,15 @@ document.querySelectorAll('a').forEach(function (link) {
 });
 
 // Event-Listener für das `beforeunload`-Event
-window.addEventListener('beforeunload', function () {
+window.addEventListener('visibilitychange', function () {
     // Überprüfen, ob Navigation nicht intern ist
-    if (sessionStorage.getItem('isInternalNavigation') === "false") {
+    if (document.visibilityState == 'hidden'){
+        if (sessionStorage.getItem('isInternalNavigation') === "false") {
         try {
             localStorage.setItem('Login', "false");
         } catch (e) {
             console.warn("localStorage ist nicht verfügbar:", e);
+        }
         }
     }
 });
