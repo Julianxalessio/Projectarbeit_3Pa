@@ -41,6 +41,7 @@ startCountdown();
 // Funktion zum Markieren interner Navigation
 function markInternalNavigation() {
     sessionStorage.setItem('isInternalNavigation', "true");
+    comsloe.log(sessionStorage.getItem('isInternalNavigation'));
 }
 
 // Event-Listener für alle Links auf der Seite
@@ -51,14 +52,14 @@ document.querySelectorAll('a').forEach(function (link) {
         }
     });
 });
-document.querySelectorAll('.Schüler').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-        if (link.hostname === window.location.hostname) {
+document.querySelectorAll('.Schüler').forEach(function (div) {
+    div.addEventListener('click', function (e) {
+        if (div.dataset.internal === "true") {
+            console.log("Hi");
             markInternalNavigation();
         }
     });
 });
-
 
 // Event-Listener für das `beforeunload`-Event
 window.addEventListener('visibilitychange', function () {
