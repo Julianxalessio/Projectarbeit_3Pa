@@ -51,6 +51,14 @@ document.querySelectorAll('a').forEach(function (link) {
         }
     });
 });
+document.querySelectorAll('.Schüler').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+        if (link.hostname === window.location.hostname) {
+            markInternalNavigation();
+        }
+    });
+});
+
 
 // Event-Listener für das `beforeunload`-Event
 window.addEventListener('visibilitychange', function () {
