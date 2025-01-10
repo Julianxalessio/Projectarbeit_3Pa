@@ -1,4 +1,0 @@
-<Files "module1.js">  
-  Order Allow,Deny
-  Deny from all
-</Files>
