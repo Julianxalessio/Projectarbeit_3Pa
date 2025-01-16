@@ -11,6 +11,15 @@
             max-width: 100%;
             max-height: auto;
         }
+        #HomeText{
+            position: absolute;
+            left: 38%;
+            top: 4%;
+            z-index: 100;
+            text-align: center;
+            inline-size: 25%;
+            font: 30px Comic;
+        }
     </style>
 </head>
 
@@ -18,20 +27,18 @@
     <title>Test Nav</title>
 
     <div class="topnav">
-        <a class="active" href="HomePage.html" onclick="WebsiteChange()">Home</a>
-        <a href="../Schüler/SchülerPage.html" onclick="WebsiteChange()">Schüler</a>
-        <a href="../Lehrer/LehrerPage.html" onclick="WebsiteChange()">Lehrer</a>
+        <a class="active" href="HomePage.html">Home</a>
+        <a href="../Schüler/SchülerPage.html">Schüler</a>
+        <a href="../Lehrer/LehrerPage.html">Lehrer</a>
+        <a href="../Search/Search.html">Search</a>
     </div>
 
     <img src="IMG_1390.jpeg" id="Hintergrundbild" alt="Hintergrundbild">
 
     <p id="Countdown">hi</p>
+    <p id="HomeText">Herzlich Willkommen zum Klassenbuch der Klasse 3Pa. Auf dieser Website können sie Informationen zu allen Schülern sowie den Lehrern der Klasse 3Pa vorfinden. Diese Website wurde als Projektarbeit im Jahre 2024/2025 von Julian Lombardo entwickelt.</p>
     <script>
-        let LocationReplacer = "../index.html"
-
-        function WebsiteChange() {
-            localStorage.setItem('Login', "true");
-        }
+        let LocationReplacer = "../index.html";
     </script>
     <script src="../JS Code/Timer.js"></script>
 
