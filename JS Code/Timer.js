@@ -41,7 +41,6 @@ startCountdown();
 // Funktion zum Markieren interner Navigation
 function markInternalNavigation() {
     sessionStorage.setItem('isInternalNavigation', "true");
-    comsloe.log(sessionStorage.getItem('isInternalNavigation'));
 }
 
 // Event-Listener für alle Links auf der Seite
