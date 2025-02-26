@@ -10,6 +10,38 @@
         body {
             background-color: rgb(199, 199, 199);
         }
+        #SchülerContainer{
+            background-color: white;
+            width: 85%;
+            margin: 50px auto;
+            gap: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        #MainU{
+            left: 18%; 
+            top: 30px;
+            position: absolute;
+            font-size: 30px;
+        }
+        table, tr, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr, td{
+            width: 40px;
+            height: 40px;
+        }
+        #Infos{
+            left: 18%;
+            top: 70px;
+            position: absolute;
+        }
+        #Extra{
+            margin-top: 10px;
+            top: 270px;
+        }
     </style>
 </head>
 
@@ -23,11 +55,40 @@
     </div>
 
     <p id="Countdown">hi</p>
-    <p>Julian</p>
+    <div id="SchülerContainer">
+       <img src="../Fotos Schüler/Passfoto_Julian Lombardo.jpg" height="auto" width="15%">
+       <div id="MainU"><u>Julian Lombardo</u></div>
+       <table id="Infos">
+            <tr>
+                <td>Wohnort</td>
+                <td> Giebenach</td>
+            </tr>
+            <tr>
+                <td>Geburtstag</td>
+                <td> 03.06.2009</td>
+            </tr>
+            <tr>
+                <td>Lieblingsfach</td>
+                <td> Mathe</td>
+            </tr>
+            <tr>
+                <td>Hobbys</td>
+                <td> Basketball, Programmieren</td>
+            </tr>
+            <tr>
+                <td>Nach der Sek</td>
+                <td> Informatiker Plattformentwicklung</td>
+            </tr>
+       </table>
+        <div id="Extra">
+            <p><u>Lustige Momente</u></p>
+            <p>Hallo</p>
+        </div>
+    </div>
     <script>
         let LocationReplacer = "../../index.html"
     </script>
-    <script src="../../JS Code/Timer.js"></script>
+    <!--<script src="../../JS_Code/Timer.js"></script> -->
 </body>
 
 </html>
