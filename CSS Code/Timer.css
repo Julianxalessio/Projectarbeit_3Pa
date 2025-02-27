@@ -1,4 +1,4 @@
 #Countdown {
-    position: absolute;
-    top: 500px;
+    position: fixed;
+    color: white;
 }

@@ -1,10 +1,33 @@
-let Minutes = 14;
-let Seconds = 10;
+//============================= Variables ============================
+
+let Minutes = 15;
+let Seconds = 0;
 let login = localStorage.getItem('Login');
+
+//============================= Init ============================
+
+// Initalisierung des Timers
+startCountdown();
+
+// Initiale Einstellung für interne Navigation
+try {
+    sessionStorage.setItem('isInternalNavigation', "false");
+} catch (e) {
+    console.warn("sessionStorage ist nicht verfügbar:", e);
+}
+
+// Check if needed checkout
 if (login === "false") {
     window.location.replace(LocationReplacer);
 }
+//============================= Funktions Timer ============================
 
+// Zurücksetzen des Timers
+function refreshTimer() {
+    Minutes = 15;
+    Seconds = 0;
+}
+// Timer
 function startCountdown() {
     function countdown() {
         if (Seconds === 0 && Minutes === 0) {
@@ -24,8 +47,7 @@ function startCountdown() {
         }
 
         Countdown.textContent = `${fuehrendeNull(Minutes)}:${fuehrendeNull(Seconds)}`;
-        console.log(`${Minutes}:${Seconds}`);
-
+        document.getElementById("Countdown").style.color = "white";
         setTimeout(countdown, 1000);
     }
 
@@ -36,14 +58,20 @@ function fuehrendeNull(zahl) {
     return (zahl < 10 ? '0' : '') + zahl;
 }
 
-startCountdown();
+//============================= Funktions Redirection ============================
 
-// Funktion zum Markieren interner Navigation
 function markInternalNavigation() {
     sessionStorage.setItem('isInternalNavigation', "true");
 }
 
-// Event-Listener für alle Links auf der Seite
+//============================= Eventlisteners  ============================
+
+// Aktivität
+['mousemove', 'keydown', 'click', 'touchstart', 'touchmove', 'touchend'].forEach(function (event) {
+    document.addEventListener(event, refreshTimer);
+});
+
+// Seitenwechsler Navbar
 document.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function (e) {
         if (link.hostname === window.location.hostname) {
@@ -51,43 +79,25 @@ document.querySelectorAll('a').forEach(function (link) {
         }
     });
 });
+
+// Seitenwechsler Schüler
 document.querySelectorAll('.Schüler').forEach(function (div) {
     div.addEventListener('click', function (e) {
         if (div.dataset.internal === "true") {
-            console.log("Hi");
             markInternalNavigation();
         }
     });
 });
 
-// Event-Listener für das `beforeunload`-Event
+// `beforeunload`-Event
 window.addEventListener('visibilitychange', function () {
-    // Überprüfen, ob Navigation nicht intern ist
-    if (document.visibilityState == 'hidden'){
+    if (document.visibilityState == 'hidden') {
         if (sessionStorage.getItem('isInternalNavigation') === "false") {
-        try {
-            localStorage.setItem('Login', "false");
-        } catch (e) {
-            console.warn("localStorage ist nicht verfügbar:", e);
-        }
+            try {
+                localStorage.setItem('Login', "false");
+            } catch (e) {
+                console.warn("localStorage ist nicht verfügbar:", e);
+            }
         }
     }
-});
-
-// Initiale Einstellung für interne Navigation
-try {
-    sessionStorage.setItem('isInternalNavigation', "false");
-} catch (e) {
-    console.warn("sessionStorage ist nicht verfügbar:", e);
-}
-
-// Funktion zum Zurücksetzen des Timers
-function refreshTimer() {
-    Minutes = 15;
-    Seconds = 0;
-}
-
-// Event-Listener für Benutzeraktivität
-['mousemove', 'keydown', 'click', 'touchstart', 'touchmove', 'touchend'].forEach(function (event) {
-    document.addEventListener(event, refreshTimer);
 });
