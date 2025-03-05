@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS Code/Timer.css">
+    <link rel="stylesheet" href="../../CSS Code/Navbar.css">
+    <style>
+        body {
+            background-color: rgb(199, 199, 199);
+        }
+        #SchülerContainer{
+            background-color: white;
+            width: 75%;
+            margin: 50px auto;
+            gap: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        #MainU{
+            left: 18%; 
+            top: 30px;
+            position: absolute;
+            font-size: 30px;
+        }
+        table, tr, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr, td{
+            width: 150px;
+            height: 40px;
+        }
+        #Infos{
+            left: 18%;
+            top: 70px;
+            position: absolute;
+        }
+        #Extra{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <title>Test Nav</title>
+
+    <div class="topnav">
+        <a href="../../HomePage/HomePage.html">Home</a>
+        <a href="../SchülerPage.html">Schüler</a>
+        <a href="../../Lehrer/LehrerPage.html">Lehrer</a>
+        <a id="Countdown">hi</a>
+    </div>
+
+    <div id="SchülerContainer">
+       <img src="../Fotos Schüler/NON.png" height="auto" width="15%">
+       <div id="MainU"><u>Janic Jenzer</u></div>
+       <table id="Infos">
+            <tr>
+                <td>Wohnort</td>
+                <td>Pratteln & Augst</td>
+            </tr>
+            <tr>
+                <td>Geburtstag</td>
+                <td>10.10.2009</td>
+            </tr>
+            <tr>
+                <td>Lieblingsfach</td>
+                <td>Sport</td>
+            </tr>
+            <tr>
+                <td>Hobbys</td>
+                <td>Gym</td>
+            </tr>
+            <tr>
+                <td>Nach der Sek</td>
+                <td>Pharmatechnologe (Lehrstelle)</td>
+            </tr>
+       </table>
+        <div id="Extra">
+            <p><u>Besonderes</u></p>
+            <ul>
+                <li></li>
+            </ul>
+            <p><u>Spitznamen</u></p>
+            <ul>
+                <li></li>
+            </ul>
+            <p><u>Lustige Momente</u></p>
+            <ul>
+                <li></li>
+            </ul>
+            <p><u>In 10 Jahren</u></p>
+            <ul>
+                <li></li>
+            </ul>        
+        </div>
+    </div>
+    <script>
+        let LocationReplacer = "../../index.html"
+    </script>
+    <script src="../../JS Code/Timer.js"></script>
+</body>
+
+</html>
