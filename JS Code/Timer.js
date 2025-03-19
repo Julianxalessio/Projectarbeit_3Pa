@@ -41,9 +41,9 @@ function startCountdown() {
         } else {
             Seconds--;
         }
-        
+
         login = localStorage.getItem("Login");
-        if (login === "false"){
+        if (login === "false") {
             window.location.replace(LocationReplacer);
         }
 
