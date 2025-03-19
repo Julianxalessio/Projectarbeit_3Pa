@@ -41,6 +41,12 @@ function startCountdown() {
         } else {
             Seconds--;
         }
+        
+        login = localStorage.getItem("Login");
+        if (login === "false"){
+            window.location.replace(LocationReplacer);
+        }
+
         if (Minutes === 0 & Seconds === 0) {
             localStorage.setItem('Login', "false");
             window.location.replace(LocationReplacer);
