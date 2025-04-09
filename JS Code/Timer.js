@@ -30,9 +30,9 @@ function refreshTimer() {
 // Timer
 function startCountdown() {
     function countdown() {
-        if (Seconds === 0 && Minutes === 0) {
-            console.log("Countdown beendet");
-            return; // Countdown stoppen
+        if (Minutes === 0 & Seconds === 0) {
+            localStorage.setItem('Login', "false");
+            window.location.replace(LocationReplacer);
         }
 
         if (Seconds === 0) {
@@ -44,11 +44,6 @@ function startCountdown() {
 
         login = localStorage.getItem("Login");
         if (login === "false") {
-            window.location.replace(LocationReplacer);
-        }
-
-        if (Minutes === 0 & Seconds === 0) {
-            localStorage.setItem('Login', "false");
             window.location.replace(LocationReplacer);
         }
 

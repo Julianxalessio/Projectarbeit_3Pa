@@ -72,7 +72,10 @@
         if (Password==PasswordInputed){
             localStorage.setItem('Login', "true");
             window.location.replace("HomePage/HomePage.html");
-       }
+        }
+        else {
+            alert("Falsches Passwort");
+        }
        }
 
        addEventListener('keypress', function (event) {
