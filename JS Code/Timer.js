@@ -90,6 +90,14 @@ document.querySelectorAll('.Schüler').forEach(function (div) {
     });
 });
 
+document.querySelectorAll('.Lehrer').forEach(function (div) {
+    div.addEventListener('click', function (e) {
+        if (div.dataset.internal === "true") {
+            markInternalNavigation();
+        }
+    });
+});
+
 // `beforeunload`-Event
 window.addEventListener('visibilitychange', function () {
     if (document.visibilityState == 'hidden') {

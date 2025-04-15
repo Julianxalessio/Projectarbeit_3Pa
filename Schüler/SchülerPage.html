@@ -35,7 +35,8 @@
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 
         }
-        #Schüler2{
+
+        #Schüler2 {
             display: grid;
             gap: 20px;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -52,7 +53,8 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             width: 130px;
-            height: 200px;
+            height: auto;
+            max-height: 200px;
         }
 
         .Schüler img {
@@ -67,6 +69,14 @@
             font-size: 1rem;
             word-wrap: break-word;
             margin: 0;
+            height: 100%;
+            /* nimmt gesamte Resthöhe */
+            display: flex;
+            align-items: flex-end;
+            /* vertikal unten */
+            justify-content: center;
+            /* optional: zentriert horizontal */
+            text-align: center;
         }
     </style>
 </head>
@@ -187,7 +197,7 @@
         <h3><u>Ehemalige Schüler/innen</u></h3>
         <div id="Gefallene2">
             <div class="Schüler" id="JaelGrub" onclick="fensterWechsel(this.id)" data-internal="true">
-                <img src="Fotos Schüler/NON.png" alt="Foto">
+                <img src="Fotos Schüler/Jael Grub.jpg" alt="Foto">
                 <h3>Jael <br> Grub</h3>
             </div>
             <div class="Schüler" id="NoemiJedigarjan" onclick="fensterWechsel(this.id)" data-internal="true">
@@ -199,7 +209,7 @@
                 <h3>Lior <br> Kindler</h3>
             </div>
             <div class="Schüler" id="SeverinPfaff" onclick="fensterWechsel(this.id)" data-internal="true">
-                <img src="Fotos Schüler/NON.png" alt="Foto">
+                <img src="Fotos Schüler/Severin Pfaff.jpg" alt="Foto">
                 <h3>Severin <br> Pfaff</h3>
             </div>
             <div class="Schüler" id="DeniRebronja" onclick="fensterWechsel(this.id)" data-internal="true">

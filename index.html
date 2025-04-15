@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <script type="text/javascript" src="module1.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" alt="Logo" href="Logo.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background-color: rgb(197, 197, 197);
         }
-       
-        #ContainerLogin{
+
+        #ContainerLogin {
             background-color: white;
             width: 500px;
             height: 300px;
             position: absolute;
             top: 25%;
-            left:35%;
+            left: 35%;
             align-items: center;
             justify-items: center;
         }
-        #PasswordInput{
+
+        #PasswordInput {
             position: absolute;
             height: 40px;
             width: 250px;
@@ -33,7 +35,8 @@
             border-color: black;
             border-radius: 8px;
         }
-        #SubmitPassword{
+
+        #SubmitPassword {
             position: absolute;
             top: 75%;
             left: 20px;
@@ -44,7 +47,8 @@
             border-color: black;
             border-radius: 8px;
         }
-        #StartText{
+
+        #StartText {
             position: absolute;
             left: 20px;
             font-size: 32px;
@@ -56,34 +60,32 @@
     <title>Hauptseite</title>
     <div id="ContainerLogin">
         <h1 id="StartText">Herzlich Willkomen zum Klassenbuch der 3Pa</h1>
-        <input type="password" id="PasswordInput" placeholder="Enter Password">  
+        <input type="password" id="PasswordInput" placeholder="Enter Password">
         <button id="SubmitPassword" onclick="SubmitPassword()">Login</button>
     </div>
 
     <script type="text/javascript">
-        let Password =  OnknownThingTitle.OnknownThing;
+        let Password = OnknownThingTitle.OnknownThing;
         console.log(Password);
-        
 
-       function SubmitPassword(){
-        let PasswordInputed = PasswordInput.value;
-        if (Password==PasswordInputed){
-            localStorage.setItem('Login', "true");
-            window.location.replace("HomePage/HomePage.html");
-        }
-        else {
-            alert("Falsches Passwort");
-        }
-       }
 
-       addEventListener('keypress', function (event) {
-        if (event.key === 'Enter'){
-            SubmitPassword();
+        function SubmitPassword() {
+            let PasswordInputed = PasswordInput.value;
+            if (Password == PasswordInputed) {
+                localStorage.setItem('Login', "true");
+                window.location.replace("HomePage/HomePage.html");
+            } else {
+                alert("Falsches Passwort");
+            }
         }
-       });
 
+        addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                SubmitPassword();
+            }
+        });
     </script>
-    
+
 </body>
 
 </html>
