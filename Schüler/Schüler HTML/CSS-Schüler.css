@@ -1,0 +1,45 @@
+body {
+    background: linear-gradient(to bottom, #a6d8ff, #e6c0c0);
+    min-height: 100vh;
+    margin: 0;
+}
+
+#SchülerContainer {
+    background-color: white;
+    width: 75%;
+    margin: 50px auto;
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#MainU {
+    left: 18%;
+    top: 30px;
+    position: absolute;
+    font-size: 30px;
+}
+
+table,
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr,
+td {
+    width: 150px;
+    height: 40px;
+}
+
+#Infos {
+    left: 18%;
+    top: 70px;
+    position: absolute;
+}
+
+#Extra {
+    margin-top: 10px;
+}

@@ -48,7 +48,6 @@ function startCountdown() {
         }
 
         Countdown.textContent = `${fuehrendeNull(Minutes)}:${fuehrendeNull(Seconds)}`;
-        document.getElementById("Countdown").style.color = "white";
         setTimeout(countdown, 1000);
     }
 

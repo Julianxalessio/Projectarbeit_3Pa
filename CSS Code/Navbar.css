@@ -9,26 +9,31 @@ body {
     top: 0;
     width: 100%;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #8fcdfc;
     z-index: 1000;
 }
 
 .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: #000000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 17.5px;
     width: 150px;
+    border-radius: 10px;
+    border: 2px #0390fc solid;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: #0390fc;
     color: black;
+    border: 2px #8fcdfc solid;
 }
 
 .topnav a.active {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    background-color: #1a5583;
+    color: rgb(255, 255, 255);
 }
