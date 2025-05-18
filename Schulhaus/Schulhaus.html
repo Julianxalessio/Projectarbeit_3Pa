@@ -12,6 +12,40 @@
             min-height: 100vh;
             margin: 0;
         }
+
+        #ContainerPanorama {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 1002;
+            background-color: white;
+        }
+
+        #ContainerPanorama h2 {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #ContainerIMG {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+        }
+
+        .Unshown {
+            display: none;
+        }
     </style>
     <title>Schulhaus</title>
 </head>
@@ -25,14 +59,34 @@
         <a href="../Klassenfotos/Klassenfotos.html">Klassenfotos</a>
         <a id="Countdown">hi</a>
     </div>
+    <script src="three.min.js"></script>
+    <script src="panolens.min.js"></script>
 
-    <div>
-
+    <div id="ContainerPanorama">
+        <h2 onclick="ClosePanorama()">X</h2>
+        <div id="ContainerIMG"></div>
     </div>
+
     <script>
         let LocationReplacer = "../index.html"
+        let panorama = new PANOLENS.ImagePanorama("IMG.jpg");
+        const viewer = new PANOLENS.Viewer({
+            container: document.querySelector('#ContainerIMG'),
+            autoHideInfospot: true, // optional: Infospots verstecken
+            controlBar: false
+        });
+        viewer.add(panorama);
+
+        function ClosePanorama() {
+            document.getElementById("ContainerPanorama").classList.toggle("Unshown");
+        }
+
+        function LoadPanorama(PathToIMG) {
+            panorama = new PANOLENS.ImagePanorama(PathToIMG);
+            viewer.add(panorama);
+        }
     </script>
-    <script src="../JS Code/Timer.js"></script>
+    <!--<script src="../JS Code/Timer.js"></script>-->
 </body>
 
 </html>
