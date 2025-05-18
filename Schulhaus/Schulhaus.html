@@ -46,6 +46,21 @@
         .Unshown {
             display: none;
         }
+
+        #IMG {
+            position: relative;
+            top: 55px;
+            left: 20%;
+
+            z-index: 1;
+        }
+
+        #Plan {
+            width: 62%;
+            height: auto;
+            object-fit: cover;
+
+        }
     </style>
     <title>Schulhaus</title>
 </head>
@@ -62,31 +77,56 @@
     <script src="three.min.js"></script>
     <script src="panolens.min.js"></script>
 
-    <div id="ContainerPanorama">
-        <h2 onclick="ClosePanorama()">X</h2>
+    <div id="ContainerPanorama" class="Unshown">
+        <h2 onclick="TogglePanorama()">X</h2>
         <div id="ContainerIMG"></div>
     </div>
+    <div id="IMG">
+        <img src="Schulhausplan.png" id="Plan" alt="Plan" usemap="#hitboxen" id="Plan" width="100%">
+
+        <map name="hitboxen">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="59,58,24" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="231,27,23" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="166,119,26" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="99,320,26" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="316,418,23" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="323,255,25" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="380,448,27" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="454,463,25" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="600,503,27" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="530,222,28" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="673,122,26" shape="circle">
+            <area onclick="LoadPanorama('IMG.jpg')" coords="457,64,28" shape="circle">
+        </map>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            imageMapResize();
+        });
+    </script>
 
     <script>
         let LocationReplacer = "../index.html"
-        let panorama = new PANOLENS.ImagePanorama("IMG.jpg");
-        const viewer = new PANOLENS.Viewer({
-            container: document.querySelector('#ContainerIMG'),
-            autoHideInfospot: true, // optional: Infospots verstecken
-            controlBar: false
-        });
-        viewer.add(panorama);
 
-        function ClosePanorama() {
+        function TogglePanorama() {
             document.getElementById("ContainerPanorama").classList.toggle("Unshown");
         }
 
         function LoadPanorama(PathToIMG) {
-            panorama = new PANOLENS.ImagePanorama(PathToIMG);
+            TogglePanorama();
+            const panorama = new PANOLENS.ImagePanorama(PathToIMG);
+            const viewer = new PANOLENS.Viewer({
+                container: document.querySelector('#ContainerIMG'),
+                autoHideInfospot: true, // optional: Infospots verstecken
+                controlBar: false
+            });
             viewer.add(panorama);
         }
     </script>
-    <!--<script src="../JS Code/Timer.js"></script>-->
+    <script src="../JS Code/Timer.js"></script>
 </body>
 
 </html>
