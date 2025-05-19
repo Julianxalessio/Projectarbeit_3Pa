@@ -7,24 +7,6 @@
     <link rel="stylesheet" href="../../CSS Code/Timer.css">
     <link rel="stylesheet" href="../../CSS Code/Navbar.css">
     <link rel="stylesheet" href="CSS-Schüler.css">
-    <style>
-        img {
-            margin: 25px 0 0 0;
-        }
-
-        #Infos {
-            left: 25%;
-            top: 70px;
-            position: absolute;
-        }
-
-        #MainU {
-            left: 25%;
-            top: 30px;
-            position: absolute;
-            font-size: 30px;
-        }
-    </style>
 
 </head>
 
@@ -42,53 +24,71 @@
 
 
     <div id="SchülerContainer">
-        <img src="../Fotos Schüler/Yelysei.png" height="auto" width="23.5%">
-        <div id="MainU"><u>Yelysei Yefremov</u></div>
-        <table id="Infos">
-            <tr>
-                <td>Wohnort</td>
-                <td>Pratteln</td>
-            </tr>
-            <tr>
-                <td>Geburtstag</td>
-                <td>07.04.2009</td>
-            </tr>
-            <tr>
-                <td>Lieblingsfach</td>
-                <td>MINT</td>
-            </tr>
-            <tr>
-                <td>Hobbys</td>
-                <td>Schach, Gitarre spielen, Lesen</td>
-            </tr>
-            <tr>
-                <td>Nach der Sek</td>
-                <td>Gymnasium</td>
-            </tr>
-        </table>
-        <div id="Extra">
-            <p><u>Besonderes</u></p>
-            <ul>
-                <li>Immer am pfeifen und Geräusche am machen</li>
-            </ul>
-            <p><u>Spitznamen</u></p>
-            <ul>
-                <li>Yeli</li>
-                <li>Yels</li>
-                <li>Yeli Beli</li>
-            </ul>
-            <p><u>Lustige Momente</u></p>
-            <ul>
-                <li>Als er in "der Besuch der alten Dame" vorgelesen hast</li>
-                <li>Als du in Englisch bei den "Touren" mit 'amazing' und 'really' ect. kommentiert hast</li>
-            </ul>
-            <p><u>In 10 Jahren</u></p>
-            <ul>
-                <li>Politiker in Russland</li>
-                <li>Mit Fiona in Bern</li>
-            </ul>
+        <div class="header">
+            <img src="../Fotos Schüler/Yelysei.png" alt="Bild" class="profilbild">
+            <div class="titelbox">
+                <h1 id="MainU">Yelysei Yefremov</h1>
+            </div>
+        </div>
+
+        <div id="Infos">
+            <table class="info-table">
+                <tr>
+                    <td>Wohnort</td>
+                    <td>Pratteln</td>
+                </tr>
+                <tr>
+                    <td>Geburtstag</td>
+                    <td>07.04.2009</td>
+                </tr>
+                <tr>
+                    <td>Lieblingsfach</td>
+                    <td>MINT</td>
+                </tr>
+                <tr>
+                    <td>Hobbys</td>
+                    <td>Schach, Gitarre spielen, Lesen</td>
+                </tr>
+                <tr>
+                    <td>Nach der Sek</td>
+                    <td>Gymnasium</td>
+                </tr>
+            </table>
+
+            <div class="section">
+                <h3>Besonderes</h3>
+                <ul>
+                    <li>Immer am pfeifen und Geräusche am machen</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Spitznamen</h3>
+                <ul>
+                    <li>Yeli</li>
+                    <li>Yels</li>
+                    <li>Yeli Beli</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Lustige Momente</h3>
+                <ul>
+                    <li>Als er in "der Besuch der alten Dame" vorgelesen hast</li>
+                    <li>Als du in Englisch bei den "Touren" mit 'amazing' und 'really' ect. kommentiert hast</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>In 10 Jahren</h3>
+                <ul>
+                    <li>Politiker in Russland</li>
+                    <li>Mit Fiona in Bern</li>
+                </ul>
+            </div>
         </div>
     </div>
+
     <script>
         let LocationReplacer = "../../index.html"
     </script>
