@@ -8,6 +8,41 @@
     <link rel="stylesheet" href="../../CSS Code/Navbar.css">
     <link rel="stylesheet" href="CSS-Lehrer.css">
 
+    <style>
+        #VideoContainer {
+            background: linear-gradient(to bottom, #a6d8ff, #e6c0c0);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1001;
+            display: flex;
+            justify-content: center;
+        }
+
+        #Video {
+            height: 100%;
+        }
+
+        .Unshown {
+            display: none !important;
+        }
+
+        #CloseButton {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 
 <body>
@@ -22,10 +57,16 @@
         <a id="Countdown">hi</a>
     </div>
 
+    <div id="VideoContainer" class="Unshown">
+        <h3 id="CloseButton" onclick="ToggleClass()">X</h3>
+        <video id="Video" controls>
+            <source src="../Fotos Lehrer/VideoSieberConverted.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <div id="SchülerContainer">
         <div class="header">
-            <img src="../Fotos Lehrer/NON.png" alt="Bild" class="profilbild">
+            <img src="../Fotos Lehrer/Sieber.JPG" alt="Bild" class="profilbild">
             <div class="titelbox">
                 <h1 id="MainU">Philip Sieber</h1>
             </div>
@@ -59,9 +100,11 @@
                 <h3>Lustige Momente</h3>
                 <ul>
                     <li>Sein böser durchbohrender Blick (ein angsteinflössender Moment)</li>
-                    <li>Als er in der 7ten seine Haare geöffnet hat</li>
+                    <li>Als er in der 7ten seine Haare geöffnet hat <u onclick="ToggleClass()"
+                            style="color:rgb(14, 14, 223);">(Hier gehts zum VIDEO)</u></li>
                     <li>Seine Icon Poet Beschreibung (eingelocht)</li>
-                    <li>In der 7ten im Klasselager als es sein Zimmer im Fenster gegenüber spiegelte und man sah wie er
+                    <li>In der 7ten im Klassenlager, als es sein Zimmer im Fenster gegenüber spiegelte und man sah wie
+                        er
                         Fussball schaute</li>
                     <li>Als ihm am See die Hose beim Fussballspielen gerissen ist</li>
                 </ul>
@@ -77,9 +120,17 @@
     </div>
 
     <script>
+        function ToggleClass() {
+            const video = document.getElementById("Video");
+            video.pause();
+            video.currentTime = 0;
+            
+            document.getElementById("SchülerContainer").classList.toggle("Unshown");
+            document.getElementById("VideoContainer").classList.toggle("Unshown");
+        }
         let LocationReplacer = "../../index.html"
     </script>
-    <script src="../../JS Code/Timer.js"></script>
+    <script src="../../JS Code/Timer.j"></script>
 </body>
 
 </html>

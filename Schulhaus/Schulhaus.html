@@ -84,25 +84,25 @@
     <script src="panolens.min.js"></script>
 
     <div id="ContainerPanorama" class="Unshown">
-        <h2 onclick="TogglePanorama()">X</h2>
+        <h2 onclick="TogglePanorama('true')">X</h2>
         <div id="ContainerIMG"></div>
     </div>
     <div id="IMG">
         <img src="Schulhausplan.png" id="Plan" alt="Plan" usemap="#hitboxen" id="Plan" width="100%">
 
         <map name="hitboxen">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="59,58,24" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="231,27,23" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="166,119,26" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="99,320,26" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="316,418,23" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="323,255,25" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="380,448,27" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="454,463,25" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="600,503,27" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="530,222,28" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="673,122,26" shape="circle">
-            <area onclick="LoadPanorama('IMG.jpg')" coords="457,64,28" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/C_Hinten.jpg')" coords="59,58,24" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/Parkplatz.jpg')" coords="231,27,23" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/C_Vorne.jpg')" coords="166,119,26" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/B.jpg')" coords="99,320,26" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/A-B.jpg')" coords="316,418,23" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/A_Vorne.jpg')" coords="323,255,25" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/Klassenzimmer.jpg')" coords="380,448,27" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/A_Hinten.jpg')" coords="454,463,25" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/D_Vorne.jpg')" coords="600,503,27" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/Alte Halle.jpg')" coords="530,222,28" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/Roter Platz.jpg')" coords="673,122,26" shape="circle">
+            <area onclick="LoadPanorama('360° Fotos/Q_Hinten.jpg')" coords="457,64,28" shape="circle">
         </map>
     </div>
 
@@ -112,13 +112,26 @@
         window.addEventListener('DOMContentLoaded', () => {
             imageMapResize();
         });
-    </script>
 
-    <script>
         let LocationReplacer = "../index.html";
 
-        function TogglePanorama() {
+        function TogglePanorama(Closed) {
             document.getElementById("ContainerPanorama").classList.toggle("Unshown");
+            if (Closed == 'true') {
+                const container = document.querySelector('#ContainerIMG');
+
+                // Vorherige Viewer-Instanz komplett entfernen (falls vorhanden)
+                container.innerHTML = ''; // Canvas wird gelöscht
+
+                // Neue Instanz erzeugen
+                viewer = new PANOLENS.Viewer({
+                    container: container,
+                    autoHideInfospot: true,
+                    controlBar: false
+                });
+
+                currentPanorama = null;
+            }
         }
 
         function LoadPanorama(PathToIMG) {
@@ -129,6 +142,7 @@
                 autoHideInfospot: true, // optional: Infospots verstecken
                 controlBar: false
             });
+            viewer.OrbitControls.rotateSpeed = -0.3;
             viewer.add(panorama);
         }
     </script>
