@@ -28,7 +28,7 @@
 
         #PasswordInput {
             position: absolute;
-            height: 40px;
+            height: 30px;
             width: 250px;
             font-size: 15px;
             left: 20px;
@@ -54,6 +54,13 @@
             left: 20px;
             font-size: 32px;
         }
+        #TogglePasswordBtn{
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            top: 45%;
+            left: 280px;
+        }
     </style>
 </head>
 
@@ -62,16 +69,44 @@
     <div id="ContainerLogin">
         <h1 id="StartText">Herzlich Willkomen zum Klassenbuch der 3Pa</h1>
         <input type="password" id="PasswordInput" placeholder="Enter Password">
+        <button onclick="togglePassword()" id="TogglePasswordBtn">
+            <svg id="ToggleIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="black"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8
+               a17.92 17.92 0 0 1 5.06-5.94M1 1l22 22" />
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                <line x1="3" y1="3" x2="21" y2="21" />
+            </svg>
+        </button>
+
         <button id="SubmitPassword" onclick="SubmitPassword()">Login</button>
     </div>
 
     <script type="text/javascript">
+        const eyeSVG = `
+    <svg id="ToggleIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+      stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      viewBox="0 0 24 24">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  `;
+
+        const eyeOffSVG = `
+    <svg id="ToggleIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+      stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      viewBox="0 0 24 24">
+      <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8
+               a17.92 17.92 0 0 1 5.06-5.94M1 1l22 22" />
+      <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+      <line x1="3" y1="3" x2="21" y2="21" />
+    </svg>
+    `;
         let Password = OnknownThingTitle.OnknownThing;
-        console.log(Password);
 
 
         function SubmitPassword() {
-            let PasswordInputed = PasswordInput.innerHTML;
+            let PasswordInputed = PasswordInput.value;
             if (Password == PasswordInputed) {
                 localStorage.setItem('Login', "true");
                 window.location.replace("HomePage/HomePage.html");
@@ -79,6 +114,20 @@
                 alert("Falsches Passwort");
             }
         }
+
+        function togglePassword() {
+            const input = document.getElementById("PasswordInput");
+            const button = document.getElementById("TogglePasswordBtn");
+
+            if (input.type === "password") {
+                input.type = "text";
+                button.innerHTML = eyeSVG;
+            } else {
+                input.type = "password";
+                button.innerHTML = eyeOffSVG;
+            }
+        }
+
 
         addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
