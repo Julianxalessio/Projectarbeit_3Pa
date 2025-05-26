@@ -71,7 +71,7 @@
 
 
         function SubmitPassword() {
-            let PasswordInputed = PasswordInput.value;
+            let PasswordInputed = PasswordInput.innerHTML;
             if (Password == PasswordInputed) {
                 localStorage.setItem('Login', "true");
                 window.location.replace("HomePage/HomePage.html");
